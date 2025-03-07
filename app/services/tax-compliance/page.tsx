@@ -1,4 +1,3 @@
-
 'use client'
 import { Calculator, Shield, FileCheck, Clock } from "lucide-react"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -18,9 +17,9 @@ export default function TaxCompliancePage() {
     };
 
     const embedParams = {
-      pegaServerUrl: 'https://providermanagementapp-znkhkj-prod.lp.trials.pegaservice.net',
-      clientId: 'Dc651Ce4DY1x1xj4',
-      authorizeUri: 'https://providermanagementapp-znkhkj-prod.lp.trials.pegaservice.net/uas/oauth/authorize',
+      pegaServerUrl: 'https://complianceapproval-rok5k4-prod.pegalaunchpad.com',
+      clientId: 'QwPO32r3Cuhw8RpQ',
+      authorizeUri: 'https://complianceapproval-rok5k4-prod.pegalaunchpad.com/uas/oauth/authorize',
       };
 
     const loadPegaEmbed = () => {
@@ -35,8 +34,9 @@ export default function TaxCompliancePage() {
             id="theEmbed"
             action="createCase"
             assignmentHeader=false
-            caseTypeID="StartupApplication"
+            caseTypeID="GiftApproval"
             autoReauth="true"
+            startingFields='{"Channel":"Application"}'
             pegaServerType="launchpad"
             pegaServerUrl="${embedParams.pegaServerUrl}"
             grantType="clientCreds"
@@ -44,7 +44,7 @@ export default function TaxCompliancePage() {
             deferLoad = "true"
             authorizeUri="${embedParams.authorizeUri}"
             clientId="${embedParams.clientId}"
-            clientSecret="RsfRhmrz8nmRE8WAIX7OZUKAkZkjOPyT"
+            clientSecret="9yA2v7SHsXGfSqyI1Djv1rErQMHw2ugH"
             style=""
         `;
         pegaEmbedHTML += `></pega-embed>`;
@@ -153,4 +153,3 @@ export default function TaxCompliancePage() {
     </div>
   )
 }
-
