@@ -1,114 +1,162 @@
-import Link from "next/link"
-import { Menu } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu"
+'use client'
+import { Calculator, Shield, FileCheck, Clock } from "lucide-react"
+import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import React, { useEffect } from 'react';
+import dotenv from "dotenv";
 
-export function Header() {
-  return (
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center">
-          <div className="mr-4 hidden md:flex">
-            <Link href="/" className="mr-6 flex items-center space-x-2">
-              <span className="font-bold">Sage Consulting Services</span>
-            </Link>
-            <nav className="flex items-center space-x-6 text-sm font-medium">
-              <Link href="/" className="transition-colors hover:text-foreground/80">
-                Home
-              </Link>
-              <NavigationMenu>
-                <NavigationMenuList>
-                  <NavigationMenuItem>
-                    <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                      <div className="grid gap-3 p-4 w-[400px]">
-                        <NavigationMenuLink asChild>
-                          <Link
-                              href="/services/tax-compliance"
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">Tax Compliance</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Comprehensive tax compliance and advisory services
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                        <NavigationMenuLink asChild>
-                          <Link
-                              href="/services/gift-approval"
-                              className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">Gift Approval Assessment</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Submit gifts for compliance review and approval
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </div>
-                    </NavigationMenuContent>
-                  </NavigationMenuItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-              <Link href="/about" className="transition-colors hover:text-foreground/80">
-                About Us
-              </Link>
-              <Link href="/contact" className="transition-colors hover:text-foreground/80">
-                Contact
-              </Link>
-              <Link href="/blog" className="transition-colors hover:text-foreground/80">
-                Blog
-              </Link>
-            </nav>
+dotenv.config();
+
+
+export default function TaxCompliancePage() {
+  useEffect(() => {
+    const navigateToParent = () => {
+      const loadedEmbed = document.getElementById('loadedEmbed');
+
+      if (loadedEmbed) {
+        loadedEmbed.innerHTML = `
+          <div style="padding-top: 30px;">
+            <p style="font-size: 20px; font-weight: bold;">Your request has been submitted.</p>
           </div>
-          <Sheet>
-            <SheetTrigger asChild>
-              <Button
-                  variant="ghost"
-                  size="icon"
-                  className="mr-2 px-0 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
-              >
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Toggle Menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="left">
-              <Link href="/" className="flex items-center">
-                <span className="font-bold">Sage Consulting Services</span>
-              </Link>
-              <nav className="flex flex-col space-y-4 mt-4">
-                <Link href="/" className="text-sm font-medium">
-                  Home
-                </Link>
-                <div className="space-y-2">
-                  <div className="text-sm font-medium">Services</div>
-                  <Link href="/services/tax-compliance" className="block text-sm text-muted-foreground pl-4">
-                    Tax Compliance
-                  </Link>
-                  <Link href="/services/gift-approval" className="block text-sm text-muted-foreground pl-4">
-                    Gift Approval Assessment
-                  </Link>
-                </div>
-                <Link href="/about" className="text-sm font-medium">
-                  About Us
-                </Link>
-                <Link href="/contact" className="text-sm font-medium">
-                  Contact
-                </Link>
-                <Link href="/blog" className="text-sm font-medium">
-                  Blog
-                </Link>
-              </nav>
-            </SheetContent>
-          </Sheet>
+        `;
+      }
+    };
+
+    const embedParams = {
+      pegaServerUrl: 'https://complianceapproval-rok5k4-prod.pegalaunchpad.com',
+      clientId: process.env.NEXT_PUBLIC_CLIENTID,
+      clientSecret: process.env.NEXT_PUBLIC_CLIENTSECRET,
+      authorizeUri: 'https://complianceapproval-rok5k4-prod.pegalaunchpad.com/uas/oauth/authorize',
+      };
+
+    const loadPegaEmbed = () => {
+
+      type CustomElement = HTMLElement & { load: () => void };
+      const elDiv= document.getElementById('pegaEmbedContainer') as CustomElement;
+      console.log('Element found:', elDiv);
+
+      if (elDiv) {
+        let pegaEmbedHTML = `
+          <pega-embed
+            id="theEmbed"
+            action="createCase"
+            assignmentHeader=false
+            caseTypeID="GiftApproval"
+            autoReauth="true"
+            startingFields='{"Channel":"Application"}'
+            pegaServerType="launchpad"
+            pegaServerUrl="${embedParams.pegaServerUrl}"
+            grantType="clientCreds"
+            casePage="assignment"
+            deferLoad = "true"
+            authorizeUri="${embedParams.authorizeUri}"
+            clientId="${embedParams.clientId}"
+            clientSecret="${embedParams.clientSecret}"
+            style=""
+        `;
+        pegaEmbedHTML += `></pega-embed>`;
+        elDiv.innerHTML = pegaEmbedHTML;
+        const elEmbed = document.getElementById('theEmbed') as CustomElement;
+
+        elEmbed.addEventListener('embedcaseclosed', navigateToParent);
+        elEmbed.addEventListener('embedprocessingend', navigateToParent);
+        elEmbed.addEventListener('embedeventcancel', navigateToParent);
+        elEmbed.load();
+      }
+    };
+
+    const loadScript = () => {
+      if (!document.querySelector("script[src='https://lp.constellation.pega.com/integrated/react/prod/pega-embed.js']")) {
+        const script = document.createElement('script');
+        script.src = 'https://lp.constellation.pega.com/integrated/react/prod/pega-embed.js';
+        script.async = true;
+        script.onload = () => {
+          loadPegaEmbed();
+        };
+        document.head.appendChild(script);
+      } else {
+        loadPegaEmbed();
+      }
+    };
+    loadScript();
+  }, []);
+  return (
+    <div className="flex flex-col min-h-screen">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-primary">
+        <div className="container px-4 md:px-6">
+          <div className="flex flex-col items-center space-y-4 text-center">
+            <div className="space-y-2">
+              <h1 className="text-3xl font-bold tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl lg:text-6xl">
+                Tax Compliance Portal
+              </h1>
+              <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
+                Streamline your tax compliance process with our comprehensive solutions
+              </p>
+            </div>
+          </div>
         </div>
-      </header>
+      </section>
+
+      <section className="w-full py-12 md:py-24 lg:py-32">
+        <div className="container px-4 md:px-6">
+          <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
+            <div className="space-y-4">
+              <h2 className="text-3xl font-bold">Our Tax Compliance Services</h2>
+              <p className="text-muted-foreground">
+                Comprehensive tax compliance solutions designed to keep your business compliant and efficient.
+              </p>
+              <div className="grid gap-4 md:grid-cols-2">
+                <Card>
+                  <CardHeader>
+                    <Calculator className="h-6 w-6 text-primary" />
+                    <CardTitle>Tax Calculation</CardTitle>
+                    <CardDescription>Accurate tax calculations and assessments</CardDescription>
+                  </CardHeader>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <Shield className="h-6 w-6 text-primary" />
+                    <CardTitle>Compliance Monitoring</CardTitle>
+                    <CardDescription>Real-time compliance tracking</CardDescription>
+                  </CardHeader>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <FileCheck className="h-6 w-6 text-primary" />
+                    <CardTitle>Document Management</CardTitle>
+                    <CardDescription>Secure document storage and processing</CardDescription>
+                  </CardHeader>
+                </Card>
+                <Card>
+                  <CardHeader>
+                    <Clock className="h-6 w-6 text-primary" />
+                    <CardTitle>Deadline Tracking</CardTitle>
+                    <CardDescription>Automated deadline reminders</CardDescription>
+                  </CardHeader>
+                </Card>
+              </div>
+            </div>
+            <div id="tax-portal" className="rounded-lg border bg-card text-card-foreground shadow-sm h-screen">
+              <div className="flex flex-col space-y-1.5 p-6">
+                <h3 className="text-2xl font-semibold leading-none tracking-tight">Tax Compliance Portal</h3>
+                <p className="text-sm text-muted-foreground">Submit gift details to check on Tax Complaince</p>
+              </div>
+              <div className="p-6 pt-0 h-full">
+                <div className="h-[700px] overflow-hidden rounded-lg bg-muted">
+                  {/* This is where you would embed your tax compliance portal iframe */}
+                  <div className="h-full w-full flex items-center justify-center text-muted-foreground">
+                    <div>
+                      <div id="loadedEmbed">
+                        <div id="pegaEmbedContainer"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   )
 }
