@@ -18,7 +18,7 @@ export function Header() {
         <div className="container flex h-16 items-center">
           <div className="mr-4 hidden md:flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
-              <span className="font-bold">Sage Consulting Services</span>
+              <span className="font-bold">NexusCover</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <Link href="/" className="transition-colors hover:text-foreground/80">
@@ -81,7 +81,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <Link href="/" className="flex items-center">
-                <span className="font-bold">Sage Consulting Services</span>
+                <span className="font-bold">NexusCover</span>
               </Link>
               <nav className="flex flex-col space-y-4 mt-4">
                 <Link href="/" className="text-sm font-medium">
