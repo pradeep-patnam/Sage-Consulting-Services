@@ -29,22 +29,12 @@ export function Footer() {
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/services/tax-compliance" className="text-muted-foreground hover:text-foreground">
-                    Tax Compliance
+                    Gift Compliance
                   </Link>
                 </li>
                 <li>
                   <Link href="/services/gift-approval" className="text-muted-foreground hover:text-foreground">
                     Gift Approval Assessment
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h4 className="text-sm font-medium">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/blog" className="text-muted-foreground hover:text-foreground">
-                    Blog
                   </Link>
                 </li>
               </ul>

@@ -1,5 +1,5 @@
 'use client'
-import { Calculator, Shield, FileCheck, Clock } from "lucide-react"
+import { Calculator, KeyRound, FileCheck, SunSnow } from "lucide-react"
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import React, { useEffect } from 'react';
 import dotenv from "dotenv";
@@ -108,29 +108,29 @@ export default function TaxCompliancePage() {
                   <Card>
                     <CardHeader>
                       <Calculator className="h-6 w-6 text-primary" />
-                      <CardTitle>Gift Calculation</CardTitle>
-                      <CardDescription>Accurate Gift calculations and assessments</CardDescription>
-                    </CardHeader>
-                  </Card>
-                  <Card>
-                    <CardHeader>
-                      <Shield className="h-6 w-6 text-primary" />
-                      <CardTitle>Compliance Monitoring</CardTitle>
-                      <CardDescription>Real-time compliance tracking</CardDescription>
+                      <CardTitle>Regulatory Compliance</CardTitle>
+                      <CardDescription>Avoid Legal Issues and Adherence to Policies</CardDescription>
                     </CardHeader>
                   </Card>
                   <Card>
                     <CardHeader>
                       <FileCheck className="h-6 w-6 text-primary" />
-                      <CardTitle>Document Management</CardTitle>
-                      <CardDescription>Secure document storage and processing</CardDescription>
+                      <CardTitle>Transparency and Accountability</CardTitle>
+                      <CardDescription>Clear Records and Audit Trails</CardDescription>
                     </CardHeader>
                   </Card>
                   <Card>
                     <CardHeader>
-                      <Clock className="h-6 w-6 text-primary" />
-                      <CardTitle>Deadline Tracking</CardTitle>
-                      <CardDescription>Automated deadline reminders</CardDescription>
+                      <SunSnow className="h-6 w-6 text-primary" />
+                      <CardTitle>Efficiency and Automation</CardTitle>
+                      <CardDescription>Streamlined Processes and Real-Time Checks</CardDescription>
+                    </CardHeader>
+                  </Card>
+                  <Card>
+                    <CardHeader>
+                      <KeyRound className="h-6 w-6 text-primary" />
+                      <CardTitle>Employee Empowerment</CardTitle>
+                      <CardDescription>Easy Access and Educational Tool</CardDescription>
                     </CardHeader>
                   </Card>
                 </div>
