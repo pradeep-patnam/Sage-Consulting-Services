@@ -18,7 +18,7 @@ export function Header() {
         <div className="container flex h-16 items-center">
           <div className="mr-4 hidden md:flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
-              <span className="font-bold">NexusCover</span>
+              <span className="font-bold">Sage Consulting Services</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <Link href="/" className="transition-colors hover:text-foreground/80">
@@ -35,7 +35,7 @@ export function Header() {
                               href="/services/tax-compliance"
                               className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                           >
-                            <div className="text-sm font-medium leading-none">Tax Compliance</div>
+                            <div className="text-sm font-medium leading-none">Gift Compliance</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
                               Comprehensive tax compliance and advisory services
                             </p>
@@ -63,9 +63,6 @@ export function Header() {
               <Link href="/contact" className="transition-colors hover:text-foreground/80">
                 Contact
               </Link>
-              <Link href="/blog" className="transition-colors hover:text-foreground/80">
-                Blog
-              </Link>
             </nav>
           </div>
           <Sheet>
@@ -81,7 +78,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <Link href="/" className="flex items-center">
-                <span className="font-bold">NexusCover</span>
+                <span className="font-bold">Sage Consulting Services</span>
               </Link>
               <nav className="flex flex-col space-y-4 mt-4">
                 <Link href="/" className="text-sm font-medium">
