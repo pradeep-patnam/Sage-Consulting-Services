@@ -56,8 +56,8 @@ export default function TaxCompliancePage() {
         elDiv.innerHTML = pegaEmbedHTML;
         const elEmbed = document.getElementById('theEmbed') as CustomElement;
 
-        //elEmbed.addEventListener('embedcaseclosed', navigateToParent);
-        //elEmbed.addEventListener('embedprocessingend', navigateToParent);
+        elEmbed.addEventListener('embedcaseclosed', navigateToParent);
+        elEmbed.addEventListener('embedprocessingend', navigateToParent);
         elEmbed.addEventListener('embedeventcancel', navigateToParent);
         elEmbed.load();
       }
