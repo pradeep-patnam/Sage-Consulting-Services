@@ -86,10 +86,10 @@ export default function TaxCompliancePage() {
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl lg:text-6xl">
-                  Gift Compliance Portal
+                  Diplomatic Gift Compliance Portal
                 </h1>
                 <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
-                  Streamline your Gift compliance process with our comprehensive solutions
+                  Gift compliance resources for diplomatic staff and missions
                 </p>
               </div>
             </div>
@@ -100,9 +100,9 @@ export default function TaxCompliancePage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
               <div className="space-y-4">
-                <h2 className="text-3xl font-bold">Our Gift Compliance Services</h2>
+                <h2 className="text-3xl font-bold">Diplomatic Tax Services</h2>
                 <p className="text-muted-foreground">
-                  Comprehensive Gift compliance solutions designed to keep your business compliant and efficient.
+                  Comprehensive Gift compliance solutions designed for diplomatic staff and missions.
                 </p>
                 <div className="grid gap-4 md:grid-cols-2">
                   <Card>
@@ -129,7 +129,7 @@ export default function TaxCompliancePage() {
                   <Card>
                     <CardHeader>
                       <KeyRound className="h-6 w-6 text-primary" />
-                      <CardTitle>Employee Empowerment</CardTitle>
+                      <CardTitle>Diplomats Empowerment</CardTitle>
                       <CardDescription>Easy Access and Educational Tool</CardDescription>
                     </CardHeader>
                   </Card>

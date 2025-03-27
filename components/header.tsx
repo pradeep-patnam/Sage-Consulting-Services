@@ -18,7 +18,7 @@ export function Header() {
         <div className="container flex h-16 items-center">
           <div className="mr-4 hidden md:flex">
             <Link href="/" className="mr-6 flex items-center space-x-2">
-              <span className="font-bold">Sage Consulting Services</span>
+              <span className="font-bold">UK Foreign and Commonwealth Office</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <Link href="/" className="transition-colors hover:text-foreground/80">
@@ -37,7 +37,7 @@ export function Header() {
                           >
                             <div className="text-sm font-medium leading-none">Gift Compliance</div>
                             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Comprehensive tax compliance and advisory services
+                              Gift compliance and advisory services for diplomatic staff
                             </p>
                           </Link>
                         </NavigationMenuLink>
@@ -78,7 +78,7 @@ export function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <Link href="/" className="flex items-center">
-                <span className="font-bold">Sage Consulting Services</span>
+                <span className="font-bold">UK Foreign and Commonwealth Office</span>
               </Link>
               <nav className="flex flex-col space-y-4 mt-4">
                 <Link href="/" className="text-sm font-medium">
@@ -87,7 +87,7 @@ export function Header() {
                 <div className="space-y-2">
                   <div className="text-sm font-medium">Services</div>
                   <Link href="/services/tax-compliance" className="block text-sm text-muted-foreground pl-4">
-                    Tax Compliance
+                    Gift Compliance
                   </Link>
                   <Link href="/services/gift-approval" className="block text-sm text-muted-foreground pl-4">
                     Gift Approval Assessment

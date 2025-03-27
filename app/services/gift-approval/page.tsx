@@ -11,8 +11,6 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { useToast } from "@/hooks/use-toast"
-import { Calculator, KeyRound, FileCheck, SunSnow } from "lucide-react"
-
 
 export default function GiftApprovalPage() {
     const { toast } = useToast()
@@ -120,10 +118,10 @@ export default function GiftApprovalPage() {
                     <div className="flex flex-col items-center space-y-4 text-center">
                         <div className="space-y-2">
                             <h1 className="text-3xl font-bold tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl lg:text-6xl">
-                                Gift Approval Assessment
+                                Diplomatic Gift Approval Assessment
                             </h1>
                             <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
-                                Submit gifts for compliance review and approval
+                                Submit gifts for diplomatic protocol review and approval
                             </p>
                         </div>
                     </div>
@@ -144,7 +142,7 @@ export default function GiftApprovalPage() {
                                         )}
                                         <CardTitle>{result.status === "approved" ? "Approved" : "Rejected"}</CardTitle>
                                     </div>
-                                    <CardDescription>Gift approval assessment result</CardDescription>
+                                    <CardDescription>Diplomatic gift approval assessment result</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <Alert>
@@ -165,9 +163,9 @@ export default function GiftApprovalPage() {
                                 <CardHeader>
                                     <div className="flex items-center gap-2">
                                         <Gift className="h-6 w-6 text-primary" />
-                                        <CardTitle>Gift Approval Form</CardTitle>
+                                        <CardTitle>Diplomatic Gift Approval Form</CardTitle>
                                     </div>
-                                    <CardDescription>Submit details about a gift for compliance review</CardDescription>
+                                    <CardDescription>Submit details about a gift for diplomatic protocol review</CardDescription>
                                 </CardHeader>
                                 <CardContent>
                                     <form id="gift-form" onSubmit={handleSubmit} className="space-y-6">

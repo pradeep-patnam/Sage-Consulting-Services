@@ -11,15 +11,15 @@ export default function Home() {
           <div className="flex flex-col items-center space-y-4 text-center">
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter text-primary-foreground sm:text-4xl md:text-5xl lg:text-6xl">
-                Welcome to Consulting Portal
+                UK Foreign and Commonwealth Office
               </h1>
               <p className="mx-auto max-w-[700px] text-primary-foreground/80 md:text-xl">
-                Professional consulting services to help your business grow and succeed
+                Promoting British interests overseas and supporting citizens abroad
               </p>
             </div>
             <Button asChild size="lg" className="bg-background text-primary hover:bg-background/90">
               <Link href="/contact">
-                Get Started
+                Get Support
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
@@ -34,11 +34,11 @@ export default function Home() {
               <CardHeader>
                 <BarChart className="h-10 w-10 text-primary" />
                 <CardTitle>Services Overview</CardTitle>
-                <CardDescription>Comprehensive consulting solutions for your business needs</CardDescription>
+                <CardDescription>Comprehensive diplomatic and consular services</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  We offer strategic planning, market analysis, and operational optimization services.
+                  We provide a range of services including passport assistance, visa support, and diplomatic guidance.
                 </p>
               </CardContent>
             </Card>
@@ -46,11 +46,11 @@ export default function Home() {
               <CardHeader>
                 <Users className="h-10 w-10 text-primary" />
                 <CardTitle>Latest News</CardTitle>
-                <CardDescription>Stay updated with industry trends and insights</CardDescription>
+                <CardDescription>Stay updated with diplomatic news and travel advisories</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  Regular updates on market trends, industry news, and best practices.
+                  Regular updates on international relations, travel advice, and diplomatic initiatives.
                 </p>
               </CardContent>
             </Card>
@@ -58,10 +58,10 @@ export default function Home() {
               <CardHeader>
                 <Mail className="h-10 w-10 text-primary" />
                 <CardTitle>Get in Touch</CardTitle>
-                <CardDescription>Connect with our expert consultants</CardDescription>
+                <CardDescription>Connect with our diplomatic staff</CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm text-muted-foreground">Schedule a consultation to discuss your business needs.</p>
+                <p className="text-sm text-muted-foreground">Contact our embassies and consulates for assistance with your needs.</p>
               </CardContent>
             </Card>
           </div>

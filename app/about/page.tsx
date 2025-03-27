@@ -10,7 +10,7 @@ export default function AboutPage() {
             <div className="space-y-2">
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl">About Us</h1>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl">
-                Learn about our mission, vision, and the team behind our success
+                Learn about the UK Foreign and Commonwealth Office and our global mission
               </p>
             </div>
           </div>
@@ -27,7 +27,8 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  To empower businesses with innovative solutions and strategic guidance for sustainable growth.
+                  To promote the United Kingdom's interests overseas, supporting our citizens and businesses around the
+                  globe.
                 </p>
               </CardContent>
             </Card>
@@ -38,7 +39,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  To be the leading consulting partner for businesses seeking excellence and transformation.
+                  To be a world-class diplomatic service, working to build a more secure, just, and prosperous world.
                 </p>
               </CardContent>
             </Card>
@@ -49,7 +50,7 @@ export default function AboutPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-sm text-muted-foreground">
-                  A diverse group of experienced professionals dedicated to your success.
+                  A global network of dedicated diplomatic professionals working in embassies and consulates worldwide.
                 </p>
               </CardContent>
             </Card>

@@ -8,8 +8,8 @@ import { Footer } from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Sage Consulting Services",
-  description: "Professional consulting and tax compliance services",
+  title: "UK Foreign and Commonwealth Office",
+  description: "Official portal of the UK Foreign and Commonwealth Office",
     generator: 'v0.dev'
 }
 
@@ -28,7 +28,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-
-import './globals.css'

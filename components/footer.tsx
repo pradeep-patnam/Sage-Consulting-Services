@@ -5,12 +5,12 @@ export function Footer() {
       <footer className="border-t">
         <div className="container flex flex-col gap-4 py-10 md:flex-row md:gap-8">
           <div className="flex-1 space-y-4">
-            <div className="text-lg font-medium">Sage Consulting Services</div>
-            <p className="text-sm text-muted-foreground">Represents a connection between GSIs and insurance</p>
+            <div className="text-lg font-medium">UK Foreign and Commonwealth Office</div>
+            <p className="text-sm text-muted-foreground">Promoting British interests overseas and supporting citizens abroad</p>
           </div>
           <div className="grid flex-1 grid-cols-2 gap-8 sm:grid-cols-4">
             <div className="space-y-3">
-              <h4 className="text-sm font-medium">Company</h4>
+              <h4 className="text-sm font-medium">Department</h4>
               <ul className="space-y-2 text-sm">
                 <li>
                   <Link href="/about" className="text-muted-foreground hover:text-foreground">
@@ -44,7 +44,7 @@ export function Footer() {
         <div className="border-t">
           <div className="container flex flex-col gap-4 py-6 text-center text-sm md:flex-row md:gap-6 md:text-left">
             <p className="text-muted-foreground">
-              © {new Date().getFullYear()} Sage Consulting Services. All rights reserved.
+              © {new Date().getFullYear()} UK Foreign and Commonwealth Office. All rights reserved.
             </p>
           </div>
         </div>
