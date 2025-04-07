@@ -40,7 +40,7 @@ export default function TaxCompliancePage() {
             assignmentHeader=false
             caseTypeID="GiftApproval"
             autoReauth="true"
-            startingFields='{"Channel":"Application"}'
+            startingFields='{"Channel":"Web Embedded"}'
             pegaServerType="launchpad"
             pegaServerUrl="${embedParams.pegaServerUrl}"
             grantType="clientCreds"
